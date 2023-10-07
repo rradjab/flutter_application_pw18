@@ -1,9 +1,10 @@
-import 'package:camera_app/views/camera_view.dart';
+import 'package:camera/camera.dart';
 import 'package:camera_app/views/image_view.dart';
 import 'package:flutter/material.dart';
 
 class GalleryWidget extends StatefulWidget {
-  const GalleryWidget({super.key});
+  final List<XFile?> pictures;
+  const GalleryWidget({super.key, required this.pictures});
 
   @override
   State<GalleryWidget> createState() => _GalleryWidgetState();
@@ -15,7 +16,7 @@ class _GalleryWidgetState extends State<GalleryWidget> {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 1, childAspectRatio: 2.0),
-      itemCount: pictures.length,
+      itemCount: widget.pictures.length,
       itemBuilder: (BuildContext context, int index) => Card(
         child: GestureDetector(
           onTap: () {
@@ -23,14 +24,14 @@ class _GalleryWidgetState extends State<GalleryWidget> {
               context: context,
               builder: (_) => Dialog(
                 child: ImageWidget(
-                  path: pictures[index]!.path,
+                  path: widget.pictures[index]!.path,
                 ),
               ),
             );
           },
           child: GridTile(
             child: ImageWidget(
-              path: pictures[index]!.path,
+              path: widget.pictures[index]!.path,
             ),
           ),
         ),

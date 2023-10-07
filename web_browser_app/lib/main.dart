@@ -32,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var textController = TextEditingController();
+  TextEditingController textController = TextEditingController();
   WebViewController webViewController = WebViewController();
 
   bool isLoading = false;

@@ -29,7 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final views = const <Widget>[CameraWidget(), GalleryWidget()];
+  final views = const <Widget>[CameraWidget(), GalleryWidget(pictures: [])];
   final labels = const <String>['Camera', 'Gallery'];
 
   var selectedIndex = 0;

@@ -4,8 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 
-List<XFile?> pictures = [];
-
 class CameraWidget extends StatefulWidget {
   const CameraWidget({super.key});
 
@@ -15,6 +13,7 @@ class CameraWidget extends StatefulWidget {
 
 class _CameraWidgetState extends State<CameraWidget>
     with WidgetsBindingObserver {
+  List<XFile?> pictures = [];
   late List<CameraDescription> cameras;
   CameraController? controller;
 
@@ -28,6 +27,7 @@ class _CameraWidgetState extends State<CameraWidget>
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     final CameraController? cameraController = controller;
+
     if (controller == null || !cameraController!.value.isInitialized) {
       return;
     }

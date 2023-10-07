@@ -12,7 +12,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   GoogleMapController? _controller;
-  var homeAddress = const LatLng(-33.86, 151.20);
+  LatLng homeAddress = const LatLng(-33.86, 151.20);
   double zoomValue = 12.0;
   LatLng target = const LatLng(-33.86, 151.20);
 
